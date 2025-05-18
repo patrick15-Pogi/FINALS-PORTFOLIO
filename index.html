@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Patrick's Personal Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+  
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #ddd;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+
+    header {
+      background-color: #1e1e1e;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ff6f61;
+      letter-spacing: 2px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 2rem;
+    }
+
+    nav ul li a {
+      color: #ddd;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff6f61;
+    }
+
+  
+    .section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+   
+    #home {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 5%;
+      min-height: 90vh;
+      gap: 2rem;
+    }
+
+    .home-content {
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .home-text {
+      flex: 1 1 320px;
+      color: #fff;
+      text-align: left;
+    }
+
+    .home-text h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #ff6f61;
+    }
+
+    .home-text p {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #bbb;
+      margin-bottom: 2rem;
+    }
+
+    .home-image {
+      flex: 1 1 320px;
+      text-align: center;
+    }
+
+    .home-image img {
+      max-width: 90%;
+      border-radius: 20px;
+      box-shadow: 0 15px 25px rgba(255, 111, 97, 0.4);
+      animation: floatSideways 4s ease-in-out infinite;
+    }
+
+    @keyframes floatSideways {
+      0%, 100% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      text-align: left;
+      justify-content: center;
+      padding: 0 5%;
+    }
+
+    .about-image {
+      flex: 1 1 250px;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 250px;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 40% / 20%;
+      box-shadow: 0 10px 20px rgba(255,111,97,0.6);
+    }
+
+    .about-text {
+      flex: 2 1 400px;
+      color: #ddd;
+    }
+
+    .about-text h2 {
+      color: #ff6f61;
+      margin-bottom: 1rem;
+      font-size: 2.2rem;
+    }
+
+    .about-text p {
+      text-indent: 2em;
+      line-height: 1.7;
+      color: #bbb;
+      white-space: pre-wrap;
+    }
+
+ 
+    .services-section {
+      background-color: #1f1f1f;
+      padding: 4rem 2rem;
+      border-radius: 15px;
+    }
+
+    .services-section h2 {
+      font-size: 2.5rem;
+      color: #ff6f61;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .service-box {
+      background-color: #2a2a2a;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+      color: #ccc;
+      text-align: left;
+    }
+
+    .service-box h3 {
+      color: #ff6f61;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-box p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .service-box a {
+      color: #ff6f61;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .service-box a:hover {
+      text-decoration: underline;
+    }
+
+
+    .works-section {
+      background-color: #1f1f1f;
+      padding: 3rem 2rem;
+      border-radius: 15px;
+    }
+
+    .works-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: #ff6f61;
+      font-weight: 700;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .bento-box {
+      background: #2a2a2a;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.7);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease;
+    }
+
+    .bento-box:hover {
+      transform: scale(1.05);
+    }
+
+    .bento-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+
+    .contact-section {
+      background-color: #1e1e1e;
+      padding: 3rem 2rem;
+      border-radius: 15px;
+    }
+
+    .contact-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #ff6f61;
+    }
+
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    .contact-link {
+      font-size: 3.5rem;
+      color: #bbb;
+      transition: color 0.3s ease;
+    }
+
+    .contact-link:hover {
+      color: #ff6f61;
+    }
+
+ 
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      background-color: #121212;
+      color: #666;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+
+    @media (max-width: 768px) {
+      #home {
+        flex-direction: column;
+      }
+      .about-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Personal Portfolio</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#works">Works</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="section home">
+    <div class="home-content">
+      <div class="home-text">
+        <h1>Hello, I'm Patrick Ivan Carasig</h1>
+        <p>A known graphic designer.</p>
+      </div>
+      <div class="home-image">
+        <img src="pics/0477e0b6-b6a1-46ea-96a7-4dca5038afb1.jfif" alt="Your Photo" />
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <div class="about-content">
+      <div class="about-image">
+        <img src="pics/c2852ca0-8708-4fdc-b8df-a677d1e7da7c.jfif" alt="About Me" />
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+          Hi! I’m a passionate coder with a strong love for programming and solving problems through technology. I enjoy diving into different programming languages and exploring topics like web development, algorithms, and software design. Writing clean, efficient code and creating useful applications motivates me every day. Whether I’m working on personal projects or collaborating with others, my goal is to build solutions that are both functional and elegant. <br /><br />
+          I’m always eager to learn new tools and techniques to improve my skills and create impactful digital experiences. Let’s code together and bring your ideas to life with technology!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section services-section">
+    <h2>My Services</h2>
+    <div class="services-grid">
+      <div class="service-box">
+        <h3>Editing</h3>
+        <p>Writing something big like a book can be hard. I help check and fix your work so it makes sense and looks great from start to finish.</p>
+        <a href="#">Learn more</a>
+      </div>
+      <div class="service-box">
+        <h3>App Designer</h3>
+        <p>I design apps and also get ideas from things around us. Everything from buildings to clothes inspires me to make better app designs.</p>
+        <a href="#">Learn more</a>
+      </div>
+      <div class="service-box">
+        <h3>Web Developer</h3>
+        <p>I build websites and write clean code. I try to make the code easy to understand so anyone reading it can see what it does right away.</p>
+        <a href="#">Learn more</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="works" class="works-section">
+    <h2>My Works</h2>
+    <div class="bento-grid">
+      <div class="bento-box"><img src="pics/56e59bc8-e149-4bf8-a351-4f3aa7bbb6c6.jfif" alt="Work 1" /></div>
+      <div class="bento-box"><img src="pics/patrick finals.png" alt="Work 2" /></div>
+      <div class="bento-box"><img src="pics/bb5041df-78af-466b-aad0-1ba8cd6e6d06.jfif" alt="Work 3" /></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact Me</h2>
+    <div class="contact-icons">
+      <a href="https://www.facebook.com/patrick.ivannn/" target="_blank" class="contact-link"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/bariken_ken/?hl=en" target="_blank" class="contact-link"><i class="bi bi-instagram"></i></a>
+      <a href="mailto:patrickivannn@gmail.com" class="contact-link"><i class="bi bi-envelope"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Carasig, Patrick Ivan L. All rights reserved.</p>
+  </footer>
+</body>
+</html>
